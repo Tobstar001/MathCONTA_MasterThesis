@@ -1,0 +1,36 @@
+{
+    "model_id": "DS_LE_OL_OL2",
+    "data_name": "MathCONTA_test",
+    "datetime": "2025-04-12T17:38:36.934938",
+    "method_name": "ContaTraces",
+    "parameter": {
+        "parameter1": "exponential",
+        "parameter2": null,
+        "theta": "(1.688216, 0.017004)"
+    },
+    "metrics": {
+        "accuracy": 0.5,
+        "accuracy_95CI": [
+            0.3333333333333333,
+            0.6666666666666666
+        ],
+        "precision": 0.5,
+        "recall": 0.2,
+        "f1_score": 0.2857142857142857,
+        "confusion_matrix": [
+            [
+                12,
+                3
+            ],
+            [
+                12,
+                3
+            ]
+        ],
+        "mcnemar_b": 12,
+        "mcnemar_c": 12,
+        "mcnemar_p_value": 1.0
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

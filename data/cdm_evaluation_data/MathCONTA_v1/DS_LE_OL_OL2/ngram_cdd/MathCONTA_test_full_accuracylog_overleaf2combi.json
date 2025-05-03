@@ -1,0 +1,36 @@
+{
+    "model_id": "DS_LE_OL_OL2",
+    "data_name": "MathCONTA_test_full",
+    "datetime": "2025-04-12T17:58:45.522756",
+    "method_name": "ngram_cdd",
+    "parameter": {
+        "parameter1": 10,
+        "parameter2": 0.3,
+        "theta": "0.033333"
+    },
+    "metrics": {
+        "accuracy": 0.475,
+        "accuracy_95CI": [
+            0.38333333333333336,
+            0.5666666666666667
+        ],
+        "precision": 0.48598130841121495,
+        "recall": 0.8666666666666667,
+        "f1_score": 0.6227544910179641,
+        "confusion_matrix": [
+            [
+                5,
+                55
+            ],
+            [
+                8,
+                52
+            ]
+        ],
+        "mcnemar_b": 5,
+        "mcnemar_c": 8,
+        "mcnemar_p_value": 0.5810546875
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

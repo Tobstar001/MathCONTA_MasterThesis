@@ -1,0 +1,36 @@
+{
+    "model_id": "allenai/OLMo-7B-0724-SFT-hf",
+    "data_name": "MathCONTA_test",
+    "datetime": "2025-04-11T12:46:20.582806",
+    "method_name": "CDD",
+    "parameter": {
+        "parameter1": 0.0,
+        "parameter2": null,
+        "theta": "0.0"
+    },
+    "metrics": {
+        "accuracy": 0.43333333333333335,
+        "accuracy_95CI": [
+            0.26666666666666666,
+            0.6
+        ],
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "confusion_matrix": [
+            [
+                13,
+                2
+            ],
+            [
+                15,
+                0
+            ]
+        ],
+        "mcnemar_b": 13,
+        "mcnemar_c": 15,
+        "mcnemar_p_value": 0.8505540192127228
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

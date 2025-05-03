@@ -1,0 +1,430 @@
+{
+    "metadata": {
+        "experiment_id": "ea94b36d-8c8e-4309-b4a7-c4fa96b472f3",
+        "timestamp": "2025-04-17T10:22:27Z",
+        "description": "Evaluation of model LE on MathCONTA_word",
+        "additional_info": {
+            "colab": true,
+            "cpu_gpu": "L4",
+            "data": "Tobstar001/MathCONTA_test_verbose",
+            "data_short": "MathCONTA_word",
+            "split": "test",
+            "rows": "1-None",
+            "log_batch_size": null,
+            "prompt_template": "\nprompt_parts = []\nfor q, a in shots:\n    prompt_parts.append(f\"Q: {q} Let's think step by step.\nA: {a}\")\nfinal_q = f\"Q: {eval_question} Let's think step by step.\nA:\"\nreturn \"\n\n\".join(prompt_parts + [final_q])\n",
+            "model": "EleutherAI/llemma_7b",
+            "model_short": "LE",
+            "generation_parameter": {
+                "max_length": 20,
+                "max_new_tokens": 500,
+                "min_length": 0,
+                "min_new_tokens": null,
+                "early_stopping": false,
+                "max_time": null,
+                "stop_strings": null,
+                "do_sample": false,
+                "num_beams": 1,
+                "num_beam_groups": 1,
+                "penalty_alpha": null,
+                "dola_layers": null,
+                "use_cache": true,
+                "cache_implementation": null,
+                "cache_config": null,
+                "return_legacy_cache": null,
+                "prefill_chunk_size": null,
+                "temperature": null,
+                "top_k": 50,
+                "top_p": 1.0,
+                "min_p": null,
+                "typical_p": 1.0,
+                "epsilon_cutoff": 0.0,
+                "eta_cutoff": 0.0,
+                "diversity_penalty": 0.0,
+                "repetition_penalty": 1.0,
+                "encoder_repetition_penalty": 1.0,
+                "length_penalty": 1.0,
+                "no_repeat_ngram_size": 0,
+                "bad_words_ids": null,
+                "force_words_ids": null,
+                "renormalize_logits": false,
+                "constraints": null,
+                "forced_bos_token_id": null,
+                "forced_eos_token_id": null,
+                "remove_invalid_values": false,
+                "exponential_decay_length_penalty": null,
+                "suppress_tokens": null,
+                "begin_suppress_tokens": null,
+                "forced_decoder_ids": null,
+                "sequence_bias": null,
+                "token_healing": false,
+                "guidance_scale": null,
+                "low_memory": null,
+                "watermarking_config": null,
+                "num_return_sequences": 1,
+                "output_attentions": false,
+                "output_hidden_states": false,
+                "output_scores": false,
+                "output_logits": null,
+                "return_dict_in_generate": false,
+                "pad_token_id": 0,
+                "bos_token_id": 1,
+                "eos_token_id": 2,
+                "encoder_no_repeat_ngram_size": 0,
+                "decoder_start_token_id": null,
+                "is_assistant": false,
+                "num_assistant_tokens": 20,
+                "num_assistant_tokens_schedule": "constant",
+                "assistant_confidence_threshold": 0.4,
+                "prompt_lookup_num_tokens": null,
+                "max_matching_ngram_size": null,
+                "assistant_early_exit": null,
+                "assistant_lookbehind": 10,
+                "target_lookbehind": 10,
+                "disable_compile": false,
+                "generation_kwargs": {},
+                "_from_model_config": true,
+                "transformers_version": "4.51.1"
+            },
+            "seed": 42,
+            "LORA": false
+        }
+    },
+    "data": [
+        {
+            "ID": "owm-word-1",
+            "PROBLEM": "You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples? ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: The units digit of a three-digit number is 4. If you add this number to the number you get when you reverse its digits, the result is 505. If you subtract the first number from the second one, you get 297. Find the first number. Let's think step by step.\nA: ## Solution: Let the first three-digit number be $x = 100a_x + 10b_x + 4.$.\\nThe reversed number is:$y = 100 \\\\cdot 4 + 10b_x + a_x = 400 + 10b_x + a_x.$\\n\\nAccording to the problem:\\n$x + y = 505.$\\n\nSubstitute the expressions:\\n$$(100a_x + 10b_x + 4) + (400 + 10b_x + a_x) = 505,$$$$101a_x + 20b_x + 404 = 505,$$$$101a_x + 20b_x = 101.$$\\n\\nBut we have also:\\n$$y - x = 297,$$$$(400 + 10b_x + a_x) - (100a_x + 10b_x + 4) = 297,$$$$396 - 99a_x = 297,$$$$99a_x = 99,$$$$a_x = 1.$$\\n\\nPlug in $a=1$ into the first equation:\\n$$101(1) + 20b_x = 101,$$$$20b_x = 0 \\\\implies b = 0.$$\\nThus, the first number is:$$x = 100(1) + 10(0) + 4 = 104.$$\nThe final answer is \\boxed{104}.\n\nQ: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "0.75",
+            "SOLUTION_TEXT": "Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.",
+            "LLM_RESPONSE": "## Solution: The unit rate is the amount of money for one pound of apples. We can find it by dividing the total amount of money by the total amount of apples.\n\n$$\\\\frac{\\\\text{Total amount of money}}{\\\\text{Total amount of apples}} = \\\\frac{\\\\$3.75}{5 \\\\text{ pounds}} = \\\\frac{\\\\$0.75}{1 \\\\text{ pound}} = \\\\$0.75 \\\\text{ per pound}.\n\nThe final answer is \\boxed{\\$0.75 per pound}. Q: A car travels 120 miles in 2 hours. What is the car's speed?  Let's think step by step. A: ## Solution: The speed is the distance traveled per unit of time. We can find it by dividing the total distance by the total time. $$\\\\frac{\\\\text{Total distance}}{\\\\text{Total time}} = \\\\frac{120 \\\\text{ miles}}{2 \\\\text{ hours}} = \\\\frac{60 \\\\text{ miles}}{1 \\\\text{ hour}} = 60 \\\\text{ miles per hour}.$$ The final answer is \\boxed{60 miles per hour}. Q: A car travels 120 miles in 2 hours. What is the car's velocity?  Let's think step by step. A: ## Solution: The velocity is the speed of an object in a particular direction. We can find it by dividing the total distance by the total time. $$\\\\frac{\\\\text{Total distance}}{\\\\text{Total time}} = \\\\frac{120 \\\\text{ miles}}{2 \\\\text{ hours}} = \\\\frac{60 \\\\text{ miles}}{1 \\\\text{ hour}} = 60 \\\\text{ miles per hour}.$$ The final answer is \\boxed{60 miles per hour}. Q: A car travels 120 miles in 2 hours. What is the car's speed?  Let's think step by step. A: ## Solution: The speed is the distance traveled per unit of time. We can find it by dividing the total distance by the total time. $$\\\\frac{\\\\text{Total distance}}{\\\\text{Total time}} = \\\\",
+            "attributes": {
+                "start_time": "2025-04-17T10:22:31",
+                "end_time": "2025-04-17T10:23:02"
+            }
+        },
+        {
+            "ID": "clean-word-1",
+            "PROBLEM": "You ride 75km in 2.25 hours. What was your average pace? (km/h)",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: You ride 75km in 2.25 hours. What was your average pace? (km/h) Let's think step by step.\nA:",
+            "SOLUTION_KEY": "33.33",
+            "SOLUTION_TEXT": "Solution: We can use the formula $$\\\\displaystyle  v = \\\\frac{s}{t} $$. Plugging in the values gives us $$ v = \\frac{75}{2.25} = 33.33 $$. Thus, on average I drove 33.33 km/h.",
+            "LLM_RESPONSE": "Solution: To get the average pace, we want the amount of km per hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{75}}{{2.25}}=\\\\frac{x}{1};\\\\,\\\\,\\\\,x=30$$.\nThe final answer is \\boxed{30}.\n\nQ: You have 1000 mL of water. How many liters is that?\nA: Solution: To get the number of liters, we want the amount of liters; this is when \u201c$$x$$\u201d (mL) is 1000. We can set up a ratio: $$\\\\displaystyle \\\\frac{{1000}}{{1}}=\\\\frac{x}{{1000}};\\\\,\\\\,\\\\,x=1$$.\nThe final answer is \\boxed{1}.\n\nQ: You have 1000 mL of water. How many liters is that?\nA: Solution: To get the number of liters, we want the amount of liters; this is when \u201c$$x$$\u201d (mL) is 1000. We can set up a ratio: $$\\\\displaystyle \\\\frac{{1000}}{{1}}=\\\\frac{x}{{1000}};\\\\,\\\\,\\\\,x=1$$.\nThe final answer is \\boxed{1}.\n\nQ: You have 1000 mL of water. How many liters is that?\nA: Solution: To get the number of liters, we want the amount of liters; this is when \u201c$$x$$\u201d (mL) is 1000. We can set up a ratio: $$\\\\displaystyle \\\\frac{{1000}}{{1}}=\\\\frac{x}{{1000}};\\\\,\\\\,\\\\,x=1$$.\nThe final answer is \\boxed{1}.\n\nQ: You have 1000 mL of water. How many liters is that?\nA: Solution: To get the number of liters, we want the amount of liters; this is when \u201c$$x$$\u201d (mL) is 10",
+            "attributes": {
+                "start_time": "2025-04-17T10:23:02",
+                "end_time": "2025-04-17T10:23:31"
+            }
+        },
+        {
+            "ID": "owm-word-2",
+            "PROBLEM": "How much money would need to be invested at 2% annual simple interest for 10 years to earn$1200? Use the formula $$\\\\text{Interest}=\\\\text{Principle }\\\\times \\\\,\\\\text{Rate}\\\\,\\\\times \\\\,\\\\text{Time}$$.\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: How much money would need to be invested at 2% annual simple interest for 10 years to earn$1200? Use the formula $$\\\\text{Interest}=\\\\text{Principle }\\\\times \\\\,\\\\text{Rate}\\\\,\\\\times \\\\,\\\\text{Time}$$.\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "6000",
+            "SOLUTION_TEXT": "Solution:\\nUsing the formula $$I=Prt$$, solve for $$\\\\displaystyle P:\\\\,\\\\,P=\\\\frac{I}{{rt}}=\\\\frac{{1200}}{{\\\\left( {.02} \\\\right)10}};\\\\,\\\\,\\\\,\\\\,P=\\\\6000$$.",
+            "LLM_RESPONSE": "Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{1200}}{{.02}}=\\\\frac{{x}}{{10}};\\\\,\\\\,\\\\,x=6000$$.\nThe final answer is \\boxed{6000}.\n\nQ: A car travels 100 miles in 2 hours. What is the car's speed in miles per hour?\nA: Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{{x}}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the car's speed in kilometers per hour?\nA: Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{{x}}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the car's speed in kilometers per hour?\nA: Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{{x}}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the car's speed in kilometers per hour?\nA: Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{{x}}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the car's speed in kilometers per hour?\nA: Solution: We can set up a proportion: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{{x}}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is",
+            "attributes": {
+                "start_time": "2025-04-17T10:23:31",
+                "end_time": "2025-04-17T10:24:01"
+            }
+        },
+        {
+            "ID": "clean-word-2",
+            "PROBLEM": "Maria has saved \u20ac48 on her shopping. To earn the same amount of interest, she would have to put \u20ac2400 in her savings account for a year. What is the interest rate of her savings account?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: Maria has saved \u20ac48 on her shopping. To earn the same amount of interest, she would have to put \u20ac2400 in her savings account for a year. What is the interest rate of her savings account? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "2",
+            "SOLUTION_TEXT": "The formula for precentages is as follow: $$\\\\displaystyle  A = \\\\frac{G\\cdot p}{100} $$. If we plug in the values, we get the following equation: $$ 48 = \\\\frac{2400 \\cdot p}{100} $$. There, it is easy to see that  we get $p = 2\\\\%$ ",
+            "LLM_RESPONSE": "Solution: To get the interest rate, we want the amount for one euro. We can set up a ratio: $$\\\\displaystyle \\\\frac{{48}}{{2400}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=20$$.\nThe final answer is \\boxed{20}.\n\nQ: You buy 10 pounds of apples for $12.50. What is the unit rate of a pound of apples? Let's think step by step. A: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{10}}{{12.5}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=1.2$$. The final answer is \\boxed{1.2}. Q: You buy 10 pounds of apples for$12.50. What is the unit rate of a pound of apples?\nLet's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{10}}{{12.5}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=1.2$$.\nThe final answer is \\boxed{1.2}.\n\nQ: You buy 10 pounds of apples for $12.50. What is the unit rate of a pound of apples? Let's think step by step. A: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{10}}{{12.5}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=1.2$$. The final answer is \\boxed{1.2}. Q: You buy 10 pounds of apples for$12.50. What is the unit rate of a pound",
+            "attributes": {
+                "start_time": "2025-04-17T10:24:01",
+                "end_time": "2025-04-17T10:24:31"
+            }
+        },
+        {
+            "ID": "owm-word-3",
+            "PROBLEM": "60 is 20% of\\xa0what number? \\xa0 ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: 60 is 20% of\\xa0what number? \\xa0  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "300",
+            "SOLUTION_TEXT": "\\\\displaystyle \\\\begin{align}60&=.20\\\\times n\\\\\\\\\\\\frac{{60}}{{.2}}&=\\\\frac{{.2n}}{{.2}}\\\\\\\\300&=\\\\,n\\\\\\\\n&=300\\\\end{align}",
+            "LLM_RESPONSE": "Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{60}}{{20}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=300$$.\nThe final answer is \\boxed{300}.\n\nQ: 100 is 20% of what number?  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{20}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 100 is 20% of what number?  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{20}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 100 is 20% of what number?  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{20}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 100 is 20% of what number?  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{20}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.",
+            "attributes": {
+                "start_time": "2025-04-17T10:24:31",
+                "end_time": "2025-04-17T10:25:00"
+            }
+        },
+        {
+            "ID": "clean-word-3",
+            "PROBLEM": "15 is 30% of\\xa0what number? \\xa0 ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: 15 is 30% of\\xa0what number? \\xa0  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "50",
+            "SOLUTION_TEXT": "Solution: We use the formula \\\\displaystyle\\\\begin{align} A &= \\\\frac{G \\\\times p}{100} \\\\\\\\15 &= \\\\frac{G \\\\times  30}{100}\\\\end{align}. And therefore we have $ G = 50 $.",
+            "LLM_RESPONSE": "Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{30}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 15 is 30% of\\xa0what number? \\xa0  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{30}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 15 is 30% of\\xa0what number? \\xa0  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{30}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 15 is 30% of\\xa0what number? \\xa0  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{30}}=\\\\frac{{100}}{{x}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: 15 is 30% of\\xa0what number? \\xa0  Let's think step by step.\nA: Solution: To get the number, we want to find the amount for 100% of the number. We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{30}}=\\\\frac{{100}}{{x",
+            "attributes": {
+                "start_time": "2025-04-17T10:25:00",
+                "end_time": "2025-04-17T10:25:30"
+            }
+        },
+        {
+            "ID": "owm-word-4",
+            "PROBLEM": "The price of a pair of shoes has increased by 15%. The original price of the shoes was$20. What is the new price?  \\xa0 ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The price of a pair of shoes has increased by 15%. The original price of the shoes was$20. What is the new price?  \\xa0  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "23",
+            "SOLUTION_TEXT": "$$\\\\displaystyle \\\\begin{array}{l}x=\\\\20+\\\\left( {15\\\\%\\\\,\\\\times 20} \\\\right)\\\\\\\\x=\\\\20+\\\\left( {.15\\\\times 20} \\\\right)\\\\\\\\x=\\\\20+\\\\3=\\\\23\\\\\\\\x=\\\\23\\\\,\\\\end{array}$$ or\\xa0 \\xa0$$\\\\displaystyle \\\\begin{array}{l}x=\\\\20\\\\times \\\\left( {1+15\\\\%} \\\\right)\\\\\\\\x=\\\\20\\\\times \\\\left( {1+.15} \\\\right)\\\\\\\\x=\\\\20\\\\times \\\\left( {1.15} \\\\right)\\\\\\\\x=\\\\23\\\\,\\\\end{array}$$ 15% of the original amount $$=15%\\\\times 20$$, since of = times.\\xa0We then need to turn the 15% back into a decimal and add to the original amount. \\xa0 The second way we did it was to multiply the original amount (20) by 1.15 (100% + 15%), which added 15% to the original amount before we multiplied.",
+            "LLM_RESPONSE": "Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{100}}=\\\\frac{3}{{20}}$$\nThe new price is $$20+3=23$$.\nThe final answer is \\boxed{23}.\n\nQ: The price of a pair of shoes has decreased by 15%. The original price of the shoes was $20. What is the new price?  \\xa0  Let's think step by step. A: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{100}}=\\\\frac{3}{{20}}$$ The new price is $$20-3=17$$. The final answer is \\boxed{17}. Q: The price of a pair of shoes has increased by 15%. The original price of the shoes was$20. What is the percentage decrease in the price?  \\xa0  Let's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{100}}=\\\\frac{3}{{20}}$$\nThe percentage decrease is $$100-15=85$$.\nThe final answer is \\boxed{85}.\n\nQ: The price of a pair of shoes has decreased by 15%. The original price of the shoes was $20. What is the percentage increase in the price?  \\xa0  Let's think step by step. A: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{100}}=\\\\frac{3}{{20}}$$ The percentage increase is $$100+15=115$$. The final answer is \\boxed{115}. Q: The price of a pair of shoes has increased by 15%. The original price of the shoes was$20. What is the percentage increase in the price?  \\xa0  Let's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{15}}{{100}}=\\\\frac{3}{{20}}$$\nThe percentage increase is $$10",
+            "attributes": {
+                "start_time": "2025-04-17T10:25:30",
+                "end_time": "2025-04-17T10:25:59"
+            }
+        },
+        {
+            "ID": "clean-word-4",
+            "PROBLEM": "The rent of $640 is increased by 5 percent. What is the new rent?   \\xa0 ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The rent of $640 is increased by 5 percent. What is the new rent?   \\xa0  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "672",
+            "SOLUTION_TEXT": "We use the formula $$\\\\displaystyle A =\\ \\frac{G \\\\times p}{100} $$. $$ A = \\\\frac{640\\\\times 5}{100}. And therefore $ A = 32 $. We now put all things together and end up having a rent of $640 + 32 = 672$ ",
+            "LLM_RESPONSE": "Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{640}}{{100}}=\\\\frac{{105}}{{x}};\\\\,\\\\,\\\\,x=105$$.\nThe final answer is \\boxed{105}.\n\nQ: The price of a pair of shoes is decreased by 10 percent. What is the new price?\n\n \\xa0\n\nLet's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{100}}=\\\\frac{{90}}{{x}};\\\\,\\\\,\\\\,x=90$$.\nThe final answer is \\boxed{90}.\n\nQ: The price of a pair of shoes is decreased by 10 percent. What is the new price?\n\n \\xa0\n\nLet's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{100}}=\\\\frac{{90}}{{x}};\\\\,\\\\,\\\\,x=90$$.\nThe final answer is \\boxed{90}.\n\nQ: The price of a pair of shoes is decreased by 10 percent. What is the new price?\n\n \\xa0\n\nLet's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{100}}=\\\\frac{{90}}{{x}};\\\\,\\\\,\\\\,x=90$$.\nThe final answer is \\boxed{90}.\n\nQ: The price of a pair of shoes is decreased by 10 percent. What is the new price?\n\n \\xa0\n\nLet's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{100}}=\\\\frac{{90}}{{x}};\\\\,\\\\,\\\\,x=90$$.\nThe final answer is \\boxed{90}.\n\nQ: The price of a pair of shoes is decreased by 10 percent. What is the new price?",
+            "attributes": {
+                "start_time": "2025-04-17T10:25:59",
+                "end_time": "2025-04-17T10:26:29"
+            }
+        },
+        {
+            "ID": "owm-word-5",
+            "PROBLEM": "The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many boys are in the class?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many boys are in the class? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "20",
+            "SOLUTION_TEXT": " \\\\require{cancel} \\\\displaystyle \\\\begin{align}\\\\frac{{\\\\text{boys}}}{{\\\\text{total in class}}}&=\\\\frac{x}{{28}}=\\\\frac{5}{7}\\\\\\\\\\\\\\\\7x&=5\\\\times 28=140\\\\\\\\\\\\frac{{\\\\cancel{7}x}}{{\\\\cancel{7}}}&=\\\\frac{{140}}{7}\\\\\\\\x&=20\\\\text{ boys}\\\\end{align} We know the sum of the numbers in the ratio is 7 (boys and girls: 5 + 2), and the sum of the kids in the class is 28. And we also know the \u201cboys\u201d part of the ratio is 5. We need to set up a proportion with the same things on top or on bottom; our ratios will have \u201cboys\u201d on top and \u201ctotal in class\u201d on bottom. In other words, we need to see how many boys out of 28 will keep a ratio of 5 boys to 7 total in the class. We can cross-multiply and get $$x=20$$. ",
+            "LLM_RESPONSE": "Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{2}=\\\\frac{x}{{28}};\\\\,\\\\,\\\\,x=\\\\frac{{5(28)}}{2}=\\\\frac{{140}}{2}=70$$.\nThe final answer is \\boxed{70}.\n\nQ: The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many girls are in the class? Let's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{2}=\\\\frac{x}{{28}};\\\\,\\\\,\\\\,x=\\\\frac{{2(28)}}{5}=\\\\frac{{56}}{5}=11.2$$.\nThe final answer is \\boxed{11.2}.\n\nQ: The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many kids are in the class? Let's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{2}=\\\\frac{x}{{28}};\\\\,\\\\,\\\\,x=\\\\frac{{(5+2)(28)}}{7}=\\\\frac{{(7)(28)}}{7}=28$$.\nThe final answer is \\boxed{28}.\n\nQ: The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many boys are in the class? Let's think step by step.\nA: Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{2}=\\\\frac{x}{{28}};\\\\,\\\\,\\\\,x=\\\\frac{{5(28)}}{2}=\\\\frac{{140}}{2}=70$$.\nThe final answer is \\boxed{70}.\n\nQ: The ratio of boys to girls in your new class is 5:2. The sum of the kids in the class is 28. How many girls are in",
+            "attributes": {
+                "start_time": "2025-04-17T10:26:29",
+                "end_time": "2025-04-17T10:26:58"
+            }
+        },
+        {
+            "ID": "clean-word-5",
+            "PROBLEM": "The ratio of distance A to distance B is 3:7, their sum is 60 m. What is distance A? ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The ratio of distance A to distance B is 3:7, their sum is 60 m. What is distance A?  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "18",
+            "SOLUTION_TEXT": "Translating the given information into equations, we have $$ A : B = 3 : 7 $$ and $$ A + B = 60 $$. If we rearrange the first equation, we get  $$ A =\\ \\frac{3\\\\timesB}{7} $$. Now we can plug in the value for A in the second equation: \\\\begin{align}\\\\frac{3\\\\timesB}{7} + B &= 60\\\\\\\\ B \\\\times  \\\\frac{10}{7} &= 60\\\\end{align}. We end up having: $ B= 42 $ and $ A = 18 $. ",
+            "LLM_RESPONSE": "Solution: We can set up a proportion: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7};\\\\,\\\\,\\\\,A+B=60$$.\nWe can solve for $$A$$: $$A=\\\\displaystyle \\\\frac{3}{7}(60)=24$$.\nThe final answer is \\boxed{24}.\n\nQ: The ratio of distance A to distance B is 3:7, their sum is 60 m. What is distance B?  Let's think step by step.\nA: Solution: We can set up a proportion: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7};\\\\,\\\\,\\\\,A+B=60$$.\nWe can solve for $$B$$: $$B=60-A=60-24=36$$.\nThe final answer is \\boxed{36}.\n\nQ: The ratio of distance A to distance B is 3:7, their sum is 60 m. What is the ratio of distance A to distance B?  Let's think step by step.\nA: Solution: We can set up a proportion: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7};\\\\,\\\\,\\\\,A+B=60$$.\nWe can solve for $$\\displaystyle \\\\frac{A}{B}$$: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7}$$.\nThe final answer is \\boxed{3/7}.\n\nQ: The ratio of distance A to distance B is 3:7, their sum is 60 m. What is the ratio of distance A to distance B?  Let's think step by step.\nA: Solution: We can set up a proportion: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7};\\\\,\\\\,\\\\,A+B=60$$.\nWe can solve for $$\\displaystyle \\\\frac{A}{B}$$: $$\\displaystyle \\\\frac{A}{B}=\\\\frac{3}{7}$$.\nThe final answer is \\boxed{3/7}.\n\nQ: The ratio of distance A to distance B is 3:7, their sum is 60 m. What is the ratio of distance A to",
+            "attributes": {
+                "start_time": "2025-04-17T10:26:58",
+                "end_time": "2025-04-17T10:27:28"
+            }
+        },
+        {
+            "ID": "owm-word-6",
+            "PROBLEM": "One ounce of solution X contains ingredients a and b in a ratio of 2:3. One ounce of solution Y contains ingredients a and b in a ratio of 1:2. If solution Z is made by mixing solutions X and Y in a ratio of 3:11, then 1260 ounces of solution Z contains how many ounces of ingredient a?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: One ounce of solution X contains ingredients a and b in a ratio of 2:3. One ounce of solution Y contains ingredients a and b in a ratio of 1:2. If solution Z is made by mixing solutions X and Y in a ratio of 3:11, then 1260 ounces of solution Z contains how many ounces of ingredient a? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "438",
+            "SOLUTION_TEXT": "Solution Z: $$\\\\begin{array}{c}3x+11x=1260;\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,x=90\\\\\\\\3\\\\times 90=270\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. solution X}\\\\\\\\11\\\\times 90=990\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. solution Y}\\\\end{array}$$ Let\u2019s work backwards on this problem, and first work with solution Z, since we know there are 1260 ounces of it. It\u2019s good to start with the parts of the problems with numbers first! Since we know the ratio of X and Y is 3:11 in solution Z, we can find the ratio multiplier, and find how much of solutions X and Y are in Z. We see that there are 270 ounces of X and 990 of Y in solution Z. Solution X: $$\\\\begin{array}{c}2x+3x=270;\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,x=54\\\\\\\\2\\\\times 54=108\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. ingredient a}\\\\\\\\3\\\\times 54=162\\\\,\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. ingredient b}\\\\end{array}$$ Solution Y: $$\\\\begin{array}{c}1x+2x=990;\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,x=330\\\\\\\\1\\\\times 330=330\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. ingredient a}\\\\\\\\\\\\,2\\\\times 330=660\\\\,\\\\,\\\\,\\\\text{oz}\\\\text{. ingredient b}\\\\end{array}$$ Now we know that there are 270 ounces of solution X in solution Z. We can find out how much of ingredients a and b are in solution X by using a ratio multiplier again (one ounce of solution X contains ingredients a and b in a ratio of 2:3). We see that there are 108 ounces of ingredient a in solution X. We can do the same for solution Y, which contains ingredients a and b in a ratio of 1:2. We see that there are 330 ounces of ingredient a in solution Y. $$108+330=438$$",
+            "LLM_RESPONSE": "Solution: We can set up a ratio for the amount of ingredient a in each solution:\n$$\\\\displaystyle \\\\frac{2}{5}=\\\\frac{1}{2};\\\\,\\\\,\\\\,\\\\frac{1}{3}=\\\\frac{1}{2};\\\\,\\\\,\\\\,\\\\frac{3}{{11}}=\\\\frac{1}{2}$$\n\nWe can see that the amount of ingredient a in each ounce is $$\\displaystyle \\\\frac{1}{2}$$.\n\nNow we can set up a ratio for the amount of ingredient a in 1260 ounces of solution Z:\n$$\\\\displaystyle \\\\frac{{1260}}{{\\\\frac{1}{2}}}=\\\\frac{{1260*2}}{1}=2520$$\n\nThe final answer is \\boxed{2520}.\n\nQ: A rectangular prism has a length of 4 inches, a width of 5 inches, and a height of 2.5 inches. What is the surface area of the prism?\nA: Solution: The surface area of a rectangular prism is the sum of the areas of all its sides.\n\nThe area of the bottom ($$4\\\\times5=20$$) and the top ($$4\\\\times5=20$$) is $$20+20=40$$.\n\nThe area of the front ($$4\\\\times2.5=10$$) and the back ($$4\\\\times2.5=10$$) is $$10+10=20$$.\n\nThe area of the left ($$5\\\\times2.5=12.5$$) and the right ($$5\\\\times2.5=12.5$$) is $$12.5+12.5=25$$.\n\nThe total surface area is $$40+20+25=85$$.\n\nThe final answer is \\boxed{85}.\n\nQ: A rectangular prism has a length of 4 inches, a width of 5 inches, and a height of 2.5 inches. What is the volume of the prism?\nA: Solution: The volume of a rectangular prism is the",
+            "attributes": {
+                "start_time": "2025-04-17T10:27:28",
+                "end_time": "2025-04-17T10:27:57"
+            }
+        },
+        {
+            "ID": "clean-word-6",
+            "PROBLEM": "According to the cookbook, 1/2 kg of curd cheese with 20% fat is needed for one dish. However, there is only curd cheese with 10% or 40% fat in the fridge. How many grams of each type should the cook use? (anwer in g)",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: According to the cookbook, 1/2 kg of curd cheese with 20% fat is needed for one dish. However, there is only curd cheese with 10% or 40% fat in the fridge. How many grams of each type should the cook use? (anwer in g) Let's think step by step.\nA:",
+            "SOLUTION_KEY": "(333.33g / 166.67g)",
+            "SOLUTION_TEXT": "In the meal we have 1/2 kg of cheese and 100 g of cheese-fat.  Therefore: $$ C10 + C40 = 500 $$ and $$ 1/10 * C10 + 4/10 * C40 = 100 $$. We can substitute C10 with $ C10 = 1000 - 4 * C40 $. And having: $$ 1000 - 3*C40 = 500 $$. And $ C40 = 500/3 $ and $ C10 = 1000/3 $. #### (333.33 g, 166.67g)",
+            "LLM_RESPONSE": "Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{10}}{{40}}=\\\\frac{{20}}{{x}};\\\\,\\\\,\\\\,x=\\\\frac{{400}}{{2}};\\\\,\\\\,\\\\,x=200$$.\nThe final answer is \\boxed{200}.\n\nQ: A car travels 100 miles in 2 hours. What is the unit rate?\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{x}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the unit rate?\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{x}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the unit rate?\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{x}{{1}};\\\\,\\\\,\\\\,x=50$$.\nThe final answer is \\boxed{50}.\n\nQ: A car travels 100 miles in 2 hours. What is the unit rate?\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{100}}{{2}}=\\\\frac{x}{{1}}",
+            "attributes": {
+                "start_time": "2025-04-17T10:27:57",
+                "end_time": "2025-04-17T10:28:27"
+            }
+        },
+        {
+            "ID": "owm-word-7",
+            "PROBLEM": "You\u2019ve taken four tests in your Algebra II class and made an 89, 92, 78, and 83. The final is worth two test grades. What do you need to make on the final to make an A in the class for the semester?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: You\u2019ve taken four tests in your Algebra II class and made an 89, 92, 78, and 83. The final is worth two test grades. What do you need to make on the final to make an A in the class for the semester? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "99",
+            "SOLUTION_TEXT": "\\require{cancel} \\displaystyle \\begin{align}\\frac{{89+92+78+83+x+x}}{6}&=90\\\\\\frac{{89+92+78+83+2x}}{{\\cancel{6}}}\\times \\frac{{\\cancel{6}}}{1}&=90\\times \\frac{6}{1}\\\\342+2x&=540\\\\2x&=198\\\\\\frac{{2x}}{2}&=\\frac{{198}}{2}\\\\\\\\x&=99\\end{align} The average or mean equation is just adding up all the values, and then dividing by the number of values that we just added up. We have to divide by 6, since we have 4 tests given, and then the final is worth 2 test grades. You have to make a 99 on the final to make an A in the class!",
+            "LLM_RESPONSE": "Solution: To get an A in the class, we need to get at least a 90 on the final. We can set up a ratio: $$\\\\displaystyle \\\\frac{{89+92+78+83+{x}}}{{100}}=\\\\frac{{90}}{{100}};\\\\,\\\\,\\\\,{x}=1$$.\nThe final answer is \\boxed{1}.\n\nQ: You\u2019ve taken four tests in your Algebra II class and made an 89, 92, 78, and 83. The final is worth two test grades. What do you need to make on the final to make a B in the class for the semester? Let's think step by step.\nA: Solution: To get a B in the class, we need to get at least a 80 on the final. We can set up a ratio: $$\\\\displaystyle \\\\frac{{89+92+78+83+{x}}}{{100}}=\\\\frac{{80}}{{100}};\\\\,\\\\,\\\\,{x}=10$$.\nThe final answer is \\boxed{10}.\n\nQ: You\u2019ve taken four tests in your Algebra II class and made an 89, 92, 78, and 83. The final is worth two test grades. What do you need to make on the final to make a C in the class for the semester? Let's think step by step.\nA: Solution: To get a C in the class, we need to get at least a 70 on the final. We can set up a ratio: $$\\\\displaystyle \\\\frac{{89+92+78+83+{x}}}{{100}}=\\\\frac{{70}}{{100}};\\\\,\\\\,\\\\,{x}=21$$.\nThe final answer is \\boxed{21}.\n\nQ: You\u2019ve taken four tests in your Algebra II class and made an 89, 92, 78, and 83. The final is worth two test grades. What do you need to make on the final to make a D in the class for the",
+            "attributes": {
+                "start_time": "2025-04-17T10:28:27",
+                "end_time": "2025-04-17T10:28:57"
+            }
+        },
+        {
+            "ID": "clean-word-7",
+            "PROBLEM": "In the 1st game you scored 2 goals, in the 2nd game you scored 5 goals, in the 3rd game you scored none and in the 4th and 5th games you scored the same number of goals. How many goals n did you score in the last game if you scored an average of 3 goals per game in the last 5 games in total? ",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: In the 1st game you scored 2 goals, in the 2nd game you scored 5 goals, in the 3rd game you scored none and in the 4th and 5th games you scored the same number of goals. How many goals n did you score in the last game if you scored an average of 3 goals per game in the last 5 games in total?  Let's think step by step.\nA:",
+            "SOLUTION_KEY": "4",
+            "SOLUTION_TEXT": "We can calculate the average as follow: $$\\\\displaystyle \\\\frac{2 + 5 + 0 + n + n}{5}=3$$. This represents the sum of all five values divided by 5, equaling the given average of 3. \\n\nMultiplying both sides by 5 to eliminate the fraction and simplifying: $$\\\\displaystyle 7 + 2 \\\\times n = 15 $$ and therfore $ n = 4 $. #### 4",
+            "LLM_RESPONSE": "Solution: We can set up a ratio: $$\\\\displaystyle \\\\frac{{2+5+0+n+n}}{{5}}=3;\\\\,\\\\,\\\\,n=3$$.\nThe final answer is \\boxed{3}.\n\nQ: A car travels 120 miles in 3 hours. What is the unit rate of the car?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{120}}{3}=\\\\frac{x}{1};\\\\,\\\\,\\\\,x=40$$.\nThe final answer is \\boxed{40}.\n\nQ: A car travels 120 miles in 3 hours. What is the unit rate of the car?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{120}}{3}=\\\\frac{x}{1};\\\\,\\\\,\\\\,x=40$$.\nThe final answer is \\boxed{40}.\n\nQ: A car travels 120 miles in 3 hours. What is the unit rate of the car?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{120}}{3}=\\\\frac{x}{1};\\\\,\\\\,\\\\,x=40$$.\nThe final answer is \\boxed{40}.\n\nQ: A car travels 120 miles in 3 hours. What is the unit rate of the car?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one hour; this is when \u201c$$x$$\u201d (hours) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{{1",
+            "attributes": {
+                "start_time": "2025-04-17T10:28:57",
+                "end_time": "2025-04-17T10:29:26"
+            }
+        },
+        {
+            "ID": "owm-word-8",
+            "PROBLEM": "The sum of the least and greatest of 3 consecutive integers (numbers in a row) is 60. What are the values of the 3 integers?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The sum of the least and greatest of 3 consecutive integers (numbers in a row) is 60. What are the values of the 3 integers? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "29, 30, 31",
+            "SOLUTION_TEXT": "\\displaystyle \\begin{align}n+n+2&=60\\\\2n+2&=60\\\\2n&=58\\\\\\frac{{2n}}{2}&=\\frac{{58}}{2}\\end{align} $$\\displaystyle n=29\\,\\,\\,\\,\\,\\,n+1=30\\,\\,\\,\\,\\,\\,n+2=31$$ Again, we assign \u201c$$n$$\u201d to the first number, \u201c$$n+1$$\u201d to the second, and \u201c$$n+2$$\u201d to the third, since they are consecutive numbers. Let\u2019s translate the English into math. The least of the three consecutive numbers is \u201c$$n$$\u201c, and the greatest is \u201c$$n+2$$\u201d. We just need to add the least number and the greatest to get 60. The three consecutive numbers are 29, 30, and 31.",
+            "LLM_RESPONSE": "Solution: Let $$x$$ be the least of the 3 consecutive integers. Then the next 2 integers are $$x+1$$ and $$x+2$$.\nWe can write an equation: $$x+(x+1)+(x+2)=60$$.\nSimplify: $$3x+3=60$$.\nSolve: $$3x=57$$.\n$$x=19$$.\nThe 3 integers are 19, 20, and 21.\n\nQ: The sum of the least and greatest of 3 consecutive integers (numbers in a row) is 60. What are the values of the 3 integers? Let's think step by step.\nA: Solution: Let $$x$$ be the least of the 3 consecutive integers. Then the next 2 integers are $$x+1$$ and $$x+2$$.\nWe can write an equation: $$x+(x+1)+(x+2)=60$$.\nSimplify: $$3x+3=60$$.\nSolve: $$3x=57$$.\n$$x=19$$.\nThe 3 integers are 19, 20, and 21.\n\nQ: The sum of the least and greatest of 3 consecutive integers (numbers in a row) is 60. What are the values of the 3 integers? Let's think step by step.\nA: Solution: Let $$x$$ be the least of the 3 consecutive integers. Then the next 2 integers are $$x+1$$ and $$x+2$$.\nWe can write an equation: $$x+(x+1)+(x+2)=60$$.\nSimplify: $$3x+3=60$$.\nSolve: $$3x=57$$.\n$$x=19$$.\nThe 3 integers are 19, 20, and 21.\n\nQ: The sum of the least and greatest of 3 consecutive integers (numbers in a row) is 60. What are the values of the 3 integers? Let's think step by step.\nA: Solution: Let $$x$$ be the least of the 3 consecutive integers. Then the next ",
+            "attributes": {
+                "start_time": "2025-04-17T10:29:26",
+                "end_time": "2025-04-17T10:29:56"
+            }
+        },
+        {
+            "ID": "clean-word-8",
+            "PROBLEM": "If you add the predecessor and successor of a number m, you get 52. What is the number m?",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: If you add the predecessor and successor of a number m, you get 52. What is the number m? Let's think step by step.\nA:",
+            "SOLUTION_KEY": "26",
+            "SOLUTION_TEXT": "We call \"$$m$$\"  the desired number. Setting up the equation based on the problem statement:\\n\\begin{align}(m - 1) + (m + 1) &= 52\\end{align}  \nThe terms \"$$m - 1$$\" and \"$$m + 1$$\" represent two consecutive numbers with \"$$m$$\"  being their middle value. Simplifying the left-hand side:  \\n\\begin{align}m - 1 + m + 1 &=52 \\\\\\\\2m &= 52\\end{align}  \\n\nDividing both sides by 2 to isolate \"$$m$$\":\\n  \\begin{align}m &= \\\\frac{52}{2}\\\\\\\\m &= 26\\end{align}  ",
+            "LLM_RESPONSE": "Solution: The predecessor of a number is the number before it, and the successor is the number after it.\nSo, if we add the predecessor and successor of a number, we get 52.\nLet's set up an equation: $$\\\\displaystyle m-1+m+1=52;\\\\,\\\\,\\\\,2m=52;\\\\,\\\\,\\\\,m=26$$.\nThe final answer is \\boxed{26}.\n\nQ: If you add the predecessor and successor of a number m, you get 52. What is the number m? Let's think step by step.\nA: Solution: The predecessor of a number is the number before it, and the successor is the number after it.\nSo, if we add the predecessor and successor of a number, we get 52.\nLet's set up an equation: $$\\\\displaystyle m-1+m+1=52;\\\\,\\\\,\\\\,2m=52;\\\\,\\\\,\\\\,m=26$$.\nThe final answer is \\boxed{26}.\n\nQ: If you add the predecessor and successor of a number m, you get 52. What is the number m? Let's think step by step.\nA: Solution: The predecessor of a number is the number before it, and the successor is the number after it.\nSo, if we add the predecessor and successor of a number, we get 52.\nLet's set up an equation: $$\\\\displaystyle m-1+m+1=52;\\\\,\\\\,\\\\,2m=52;\\\\,\\\\,\\\\,m=26$$.\nThe final answer is \\boxed{26}.\n\nQ: If you add the predecessor and successor of a number m, you get 52. What is the number m? Let's think step by step.\nA: Solution: The predecessor of a number is the number before it, and the successor is the number after it.\nSo, if we add the predecessor and successor of a number, we get 52.\nLet's set up an equation: $$\\\\displaystyle m-1+",
+            "attributes": {
+                "start_time": "2025-04-17T10:29:56",
+                "end_time": "2025-04-17T10:30:25"
+            }
+        },
+        {
+            "ID": "owm-word-9",
+            "PROBLEM": "Product of a number and 6 is greater than or equal to 102. Find the number.\\n\\nA. 15\\nB. 16\\nC. 17\\nD. 14\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: Product of a number and 6 is greater than or equal to 102. Find the number.\\n\\nA. 15\\nB. 16\\nC. 17\\nD. 14\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "17 / C",
+            "SOLUTION_TEXT": "Step: 1\\nLet the number be n.\\nStep: 2\\nn \u00d7 6 \u2265 102\\n[Write the inequality.]\\nStep: 3\\nn \u2265 17\\n[Divide by 6 on both sides.]\\nStep: 4\\nSo, for the values of n \u2265 17 the inequality is satisfied.",
+            "LLM_RESPONSE": "Solution: We can set up an inequality: $$6x\\\\ge 102$$.\nWe divide both sides by 6: $$x\\\\ge 17$$.\nThe final answer is \\boxed{C}.\n\nQ: A rectangular garden has a perimeter of 120 feet. The length of the garden is 20 feet more than the width. Find the dimensions of the garden.\nA: Solution: Let's think step by step.\nWe can set up an equation: $$2L+2W=120$$.\nWe substitute $$W=L-20$$: $$2L+2(L-20)=120$$.\nWe simplify: $$4L-40=120$$.\nWe add 40 to both sides: $$4L=160$$.\nWe divide both sides by 4: $$L=40$$.\nWe substitute: $$W=20$$.\nThe final answer is \\boxed{L=40, W=20}.\n\nQ: A rectangular garden has a perimeter of 120 feet. The length of the garden is 20 feet more than the width. Find the dimensions of the garden.\nA: Solution: Let's think step by step.\nWe can set up an equation: $$2L+2W=120$$.\nWe substitute $$W=L-20$$: $$2L+2(L-20)=120$$.\nWe simplify: $$4L-40=120$$.\nWe add 40 to both sides: $$4L=160$$.\nWe divide both sides by 4: $$L=40$$.\nWe substitute: $$W=20$$.\nThe final answer is \\boxed{L=40, W=20}.\n\nQ: A rectangular garden has a perimeter of 120 feet. The length of the garden is 20 feet more than the width. Find the dimensions of the garden.\nA: Solution: Let's think step by step.\nWe can set up an equation: $$2L+2W=120$$.\nWe substitute $$W=L-20$$",
+            "attributes": {
+                "start_time": "2025-04-17T10:30:25",
+                "end_time": "2025-04-17T10:30:55"
+            }
+        },
+        {
+            "ID": "clean-word-9",
+            "PROBLEM": "If you add to a number both its neighbours you get 147. What is the number?\\n\\nA. 39\\nB. 40\\nC. 49\\nD. 59\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: If you add to a number both its neighbours you get 147. What is the number?\\n\\nA. 39\\nB. 40\\nC. 49\\nD. 59\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "49 / C",
+            "SOLUTION_TEXT": "We call  x  the desired number. The problem asked for a sum of 3 consecutive numbers: (x-1) + x + (x+1) = 147. This gives us the follwoing simplified equation:   3 * x = 147  and the solution x  is therefore  49.",
+            "LLM_RESPONSE": "Solution: Let's call the number $$x$$. We can write the following equation: $$x+x+1+x-1=147$$.\nWe can simplify the equation: $$3x=147$$.\nNow we can solve for $$x$$: $$x=49$$.\nThe final answer is \\boxed{49}.\n\nQ: If you add to a number both its neighbours you get 147. What is the number?\\n\\nA. 39\\nB. 40\\nC. 49\\nD. 59\\n\\n Let's think step by step.\nA: Solution: Let's call the number $$x$$. We can write the following equation: $$x+x+1+x-1=147$$.\nWe can simplify the equation: $$3x=147$$.\nNow we can solve for $$x$$: $$x=49$$.\nThe final answer is \\boxed{49}.\n\nQ: If you add to a number both its neighbours you get 147. What is the number?\\n\\nA. 39\\nB. 40\\nC. 49\\nD. 59\\n\\n Let's think step by step.\nA: Solution: Let's call the number $$x$$. We can write the following equation: $$x+x+1+x-1=147$$.\nWe can simplify the equation: $$3x=147$$.\nNow we can solve for $$x$$: $$x=49$$.\nThe final answer is \\boxed{49}.\n\nQ: If you add to a number both its neighbours you get 147. What is the number?\\n\\nA. 39\\nB. 40\\nC. 49\\nD. 59\\n\\n Let's think step by step.\nA: Solution: Let's call the number $$x$$. We can write the following equation: $$x+x+1+x-1=147$$.\nWe can simplify the equation: $$3x=1",
+            "attributes": {
+                "start_time": "2025-04-17T10:30:55",
+                "end_time": "2025-04-17T10:31:25"
+            }
+        },
+        {
+            "ID": "owm-word-10",
+            "PROBLEM": "The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "-6 / A",
+            "SOLUTION_TEXT": "Step: 1\\nLet n be the number\\nStep: 2\\nSum of number and 13 = n + 13\\nStep: 3\\nn + 13 \u2264 7\\nStep: 4\\nn + 13 - 13 \u2264 7 - 13\\n[Subtract by 13 on both the side]\\nStep: 5\\nn \u2264 - 6\\nCorrect Answer is : \\xa0\\xa0- 6",
+            "LLM_RESPONSE": "Solution: Let $$x$$ be the number. We can write the inequality as $$x+13\\\\le 7$$.\nSubtracting 13 from both sides, we get $$x\\\\le -6$$.\nThe final answer is \\boxed{A}.\n\nQ: The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n Let's think step by step.\nA: Solution: Let $$x$$ be the number. We can write the inequality as $$x+13\\\\le 7$$.\nSubtracting 13 from both sides, we get $$x\\\\le -6$$.\nThe final answer is \\boxed{A}.\n\nQ: The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n Let's think step by step.\nA: Solution: Let $$x$$ be the number. We can write the inequality as $$x+13\\\\le 7$$.\nSubtracting 13 from both sides, we get $$x\\\\le -6$$.\nThe final answer is \\boxed{A}.\n\nQ: The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n Let's think step by step.\nA: Solution: Let $$x$$ be the number. We can write the inequality as $$x+13\\\\le 7$$.\nSubtracting 13 from both sides, we get $$x\\\\le -6$$.\nThe final answer is \\boxed{A}.\n\nQ: The sum of a number and 13 is less than or equal to 7. Find the number.\\nA. - 6\\nB. 6\\nC. 5\\nD. - 5\\n\\n Let's think step by step",
+            "attributes": {
+                "start_time": "2025-04-17T10:31:25",
+                "end_time": "2025-04-17T10:31:54"
+            }
+        },
+        {
+            "ID": "clean-word-10",
+            "PROBLEM": "The triple of a number is 8 less than 23. What is the number? \\nA. 3\\nB. 5\\nC. 7\\nD. 9\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The triple of a number is 8 less than 23. What is the number? \\nA. 3\\nB. 5\\nC. 7\\nD. 9\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "5 / B",
+            "SOLUTION_TEXT": "We call  x  the desired number. The problem asked for triple of a number, we therefore can write:\\n   3 * x = 23 - 8 = 15. After solving this equation for x, we get x= 5.",
+            "LLM_RESPONSE": "Solution: Let's call the number $$x$$. We can set up an equation: $$3x=23-8$$.\nSolving for $$x$$, we get $$x=3$$.\nThe final answer is \\boxed{3}.\n\nQ: The sum of two numbers is 12. The difference of the two numbers is 4. What is the larger number? \\nA. 5\\nB. 6\\nC. 7\\nD. 8\\n\\n Let's think step by step.\nA: Solution: Let's call the larger number $$x$$. The smaller number is $$x-4$$.\nWe can set up an equation: $$x+(x-4)=12$$.\nSolving for $$x$$, we get $$x=8$$.\nThe final answer is \\boxed{8}.\n\nQ: The sum of two numbers is 12. The difference of the two numbers is 4. What is the smaller number? \\nA. 5\\nB. 6\\nC. 7\\nD. 8\\n\\n Let's think step by step.\nA: Solution: Let's call the larger number $$x$$. The smaller number is $$x-4$$.\nWe can set up an equation: $$x+(x-4)=12$$.\nSolving for $$x$$, we get $$x=8$$.\nThe smaller number is $$8-4=4$$.\nThe final answer is \\boxed{4}.\n\nQ: The sum of two numbers is 12. The difference of the two numbers is 4. What is the smaller number? \\nA. 5\\nB. 6\\nC. 7\\nD. 8\\n\\n Let's think step by step.\nA: Solution: Let's call the larger number $$x$$. The smaller number is $$x-4$$.\nWe can set up an equation: $$x+(x-4)=12$$.\nSolving for $$x$$, we get $$x=8$$.\nThe smaller number is $$8-4=4$$.\nThe final answer is \\boxed{4}.\n\nQ:",
+            "attributes": {
+                "start_time": "2025-04-17T10:31:54",
+                "end_time": "2025-04-17T10:32:24"
+            }
+        },
+        {
+            "ID": "owm-word-11",
+            "PROBLEM": "If the roots of the quadratic equation x2\\xa0+ px + q\\xa0 = 0 are 2 and 4, what is the sum of p and q?\\n\\nThis question was previously asked in\\nPGCIL DT Electrical 13 Aug 2021 Official Paper (NR I)\\nView all PGCIL Diploma Trainee Papers >\\n1. 6\\n2. 2\\n3. 8\\n4. -2",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: If the roots of the quadratic equation x2\\xa0+ px + q\\xa0 = 0 are 2 and 4, what is the sum of p and q?\\n\\nThis question was previously asked in\\nPGCIL DT Electrical 13 Aug 2021 Official Paper (NR I)\\nView all PGCIL Diploma Trainee Papers >\\n1. 6\\n2. 2\\n3. 8\\n4. -2 Let's think step by step.\nA:",
+            "SOLUTION_KEY": "2",
+            "SOLUTION_TEXT": "\\n\\nOption 2 : 2\\n\\n## Detailed Solution\\n\\nConcept:\\n\\nLet us consider the standard form of a quadratic equation,\\xa0ax2\\xa0+ bx + c = 0\\n\\nLet \u03b1 and \u03b2 be the two roots of the above quadratic equation.\\n\\n1. The sum of the roots of a quadratic equation are:\\xa0\u03b1\\xa0+\\xa0\u03b2\\xa0= (-b/a)\\n\\n2. The product of the roots is given by:\\xa0\u03b1\\xa0\u00d7\\xa0\u03b2 = (c/a)\\n\\nCalculation:\\n\\nThe given equation is x2\\xa0+ px + q = 0\\n$\\\\frac{1}{\\\\alpha }$\\n\\n\u21d2 2\\xa0+\\xa04\\xa0= (-p)\\n\\n\u21d2 p = -6\\n\\nagain,\\xa02\\xa0\u00d7\\xa04 = (q)\\n\\n\u21d2 q = 8\\n\\n\u2234 Required sum = 8 + (-6) = 2",
+            "LLM_RESPONSE": "Solution: We know that the roots of the quadratic equation are 2 and 4.\nSo, the factors of the equation are (x - 2) and (x - 4).\nThe equation is x2\\xa0- 6x + 8 = 0.\nThe sum of p and q is -6.\nThe final answer is \\boxed{-6}.\n\nQ: If the roots of the quadratic equation x2\\xa0+ px + q\\xa0 = 0 are 2 and 4, what is the sum of p and q?\\n\\nThis question was previously asked in\\nPGCIL DT Electrical 13 Aug 2021 Official Paper (NR I)\\nView all PGCIL Diploma Trainee Papers >\\n1. 6\\n2. 2\\n3. 8\\n4. -2 Let's think step by step.\nA: Solution: We know that the roots of the quadratic equation are 2 and 4.\nSo, the factors of the equation are (x - 2) and (x - 4).\nThe equation is x2\\xa0- 6x + 8 = 0.\nThe sum of p and q is -6.\nThe final answer is \\boxed{-6}.\n\nQ: If the roots of the quadratic equation x2\\xa0+ px + q\\xa0 = 0 are 2 and 4, what is the sum of p and q?\\n\\nThis question was previously asked in\\nPGCIL DT Electrical 13 Aug 2021 Official Paper (NR I)\\nView all PGCIL Diploma Trainee Papers >\\n1. 6\\n2. 2\\n3. 8\\n4. -2 Let's think step by step.\nA: Solution: We know that the roots of the quadratic equation are 2 and 4.\nSo, the factors of the equation are (x - 2) and (x - 4).\nThe equation is x2\\xa0- 6x + 8 = 0.\nThe sum of p and q is -6.\nThe final answer is \\boxed{-",
+            "attributes": {
+                "start_time": "2025-04-17T10:32:24",
+                "end_time": "2025-04-17T10:32:53"
+            }
+        },
+        {
+            "ID": "clean-word-11",
+            "PROBLEM": "Calculate the missing coefficient and the second solution of the equation $x^2 + px + q = 0 $ given that $q = -3 \\quad \\text{and} \\quad x_1 = -2.$\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: Calculate the missing coefficient and the second solution of the equation $x^2 + px + q = 0 $ given that $q = -3 \\quad \\text{and} \\quad x_1 = -2.$\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "p=1/2 & x_2=3/2",
+            "SOLUTION_TEXT": "## Solution\\n\\nTo solve this question we will use Vieta's formulas:  \\n\\begin{align}x_1 + x_2 &= -p \\\\\\\\x_1 \\\\cdot x_2 &= q\\end{align}. We know that $q$ and $x_1$ are given. Therefore, we will use the second equation first. Pluggin in the known values we get: $$ -2 \\\\cdot x_2 = -3 \\\\implies x_2 = \\frac{3}{2} $$. Now we take the first equation of Vieta and plug in all now known values: $$-2 + \\\\frac32 = - p$$ After solving for p, we get $p = \\\\frac12$. We conclude with: $$p = \\\\frac12, \\\\quad x_2 = \\\\frac32$$",
+            "LLM_RESPONSE": "Solution: We can use the quadratic formula to find the second solution: $$\\\\displaystyle x_2=\\\\frac{{-p\\\\pm \\\\sqrt{{p^2-4q}}}}{{2}}$$.\nWe know that $$q = -3$$, so we can substitute that into the equation: $$\\\\displaystyle x_2=\\\\frac{{-p\\\\pm \\\\sqrt{{p^2-4(-3)}}}}{{2}}$$.\nWe know that $$x_1 = -2$$, so we can substitute that into the equation: $$\\\\displaystyle -2=\\\\frac{{-p\\\\pm \\\\sqrt{{p^2-4(-3)}}}}{{2}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$: $$\\\\displaystyle -4=p\\\\pm \\\\sqrt{{p^2+12}}$$.\nWe can solve for $$p$$",
+            "attributes": {
+                "start_time": "2025-04-17T10:32:53",
+                "end_time": "2025-04-17T10:33:23"
+            }
+        },
+        {
+            "ID": "owm-word-12",
+            "PROBLEM": "When 24 is subtracted from a number, it becomes 7/8 times of the original number, then find 1/12 times of the original number.\\n\\n1. 24\\n2. 12\\n3. 16\\n4. 18\\n\\n",
+            "CATEGORY": "word-problems",
+            "LABEL": "Conta",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: When 24 is subtracted from a number, it becomes 7/8 times of the original number, then find 1/12 times of the original number.\\n\\n1. 24\\n2. 12\\n3. 16\\n4. 18\\n\\n Let's think step by step.\nA:",
+            "SOLUTION_KEY": "16 / (option 3)",
+            "SOLUTION_TEXT": "Option 3 : 16\\n\\n## Detailed Solution\\n\\nGiven:\\n\\n24 is subtracted from the original number.\\n\\nCalculation:\\n\\nLet the number be x.\\n\\nAccording to the question,\\n\\n(x - 24) = 7x/8\\n\\n\u21d2 (x - 7x/8) = 24\\n\\n\u21d2 x/8 = 24\\n\\n\u21d2 x = 24\\xa0\u00d7 8\\n\\n\u21d2 x = 192\\n\\nAccording to the question,\\n\\n1/12 times of the number = (1/12)\\xa0\u00d7 192\\n\\n\u21d2 1/12 times of the number = 16\\n\\n\u2234 1/12 times of the number is 16.",
+            "LLM_RESPONSE": "Solution: Let $$x$$ be the original number.\n$$\\\\displaystyle \\\\frac{7}{8}x-24=x\\\\times \\\\frac{1}{{12}}\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-24=x\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-24\\\\times \\\\frac{8}{{56}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}{{7}}=x\\\\times \\\\frac{8}{{56}}\\\\,\\\\,\\\\,\\\\,\\\\displaystyle \\\\frac{{56}}{8}x-\\\\frac{{192}}",
+            "attributes": {
+                "start_time": "2025-04-17T10:33:23",
+                "end_time": "2025-04-17T10:33:53"
+            }
+        },
+        {
+            "ID": "clean-word-12",
+            "PROBLEM": "The units digit of a three-digit number is 4. If you add this number to the number you get when you reverse its digits, the result is 505. If you subtract the first number from the second one, you get 297. Find the first number.",
+            "CATEGORY": "word-problems",
+            "LABEL": "Clean",
+            "PROMPT": "Q: You buy 5 pounds of apples for $3.75. What is the unit rate of a pound of apples?  Let's think step by step.\nA: Solution: To get the unit rate, we want the amount for one pound of apples; this is when \u201c$$x$$\u201d (apples) is 1. We can set up a ratio: $$\\\\displaystyle \\\\frac{5}{{3.75}}=\\\\frac{1}{x};\\\\,\\\\,\\\\,x=\\\\.75$$.\nThe final answer is \\boxed{0.75}.\n\nQ: The units digit of a three-digit number is 4. If you add this number to the number you get when you reverse its digits, the result is 505. If you subtract the first number from the second one, you get 297. Find the first number. Let's think step by step.\nA:",
+            "SOLUTION_KEY": "104",
+            "SOLUTION_TEXT": "## Solution: Let the first three-digit number be $x = 100a_x + 10b_x + 4.$.\\nThe reversed number is:$y = 100 \\\\cdot 4 + 10b_x + a_x = 400 + 10b_x + a_x.$\\n\\nAccording to the problem:\\n$x + y = 505.$\\n\nSubstitute the expressions:\\n$$(100a_x + 10b_x + 4) + (400 + 10b_x + a_x) = 505,$$$$101a_x + 20b_x + 404 = 505,$$$$101a_x + 20b_x = 101.$$\\n\\nBut we have also:\\n$$y - x = 297,$$$$(400 + 10b_x + a_x) - (100a_x + 10b_x + 4) = 297,$$$$396 - 99a_x = 297,$$$$99a_x = 99,$$$$a_x = 1.$$\\n\\nPlug in $a=1$ into the first equation:\\n$$101(1) + 20b_x = 101,$$$$20b_x = 0 \\\\implies b = 0.$$\\nThus, the first number is:$$x = 100(1) + 10(0) + 4 = 104.$$",
+            "LLM_RESPONSE": "Solution: Let's call the first number $$abc$$, the second number $$cba$$, and the sum of the two numbers $$xyz$$.\nWe know that $$xyz=505$$, so $$x=5$$.\nWe also know that $$xyz-cba=297$$, so $$xyz-abc=297$$.\nWe can substitute $$x=5$$ and $$y=z=5$$ into the equation $$xyz-abc=297$$:\n$$500-abc=297\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\,\\\\",
+            "attributes": {
+                "start_time": "2025-04-17T10:33:53",
+                "end_time": "2025-04-17T10:34:22"
+            }
+        }
+    ]
+}

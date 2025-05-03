@@ -1,0 +1,36 @@
+{
+    "model_id": "EleutherAI/llemma_7b",
+    "data_name": "MathCONTA_full_test",
+    "datetime": "2025-04-13T13:07:56.496258",
+    "method_name": "Ensemble",
+    "parameter": {
+        "parameter1": null,
+        "parameter2": null,
+        "theta": "majority_voting_random_tie"
+    },
+    "metrics": {
+        "accuracy": 0.5333333333333333,
+        "accuracy_95CI": [
+            0.36666666666666664,
+            0.7333333333333333
+        ],
+        "precision": 0.5294117647058824,
+        "recall": 0.6,
+        "f1_score": 0.5625,
+        "confusion_matrix": [
+            [
+                7,
+                8
+            ],
+            [
+                6,
+                9
+            ]
+        ],
+        "mcnemar_b": 7,
+        "mcnemar_c": 6,
+        "mcnemar_p_value": 1.0
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

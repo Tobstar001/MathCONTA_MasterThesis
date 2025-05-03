@@ -1,0 +1,36 @@
+{
+    "model_id": "DS_LE_OL_OL2",
+    "data_name": "MathCONTA_test_full",
+    "datetime": "2025-04-12T19:07:18.419877",
+    "method_name": "ngram_loglike",
+    "parameter": {
+        "parameter1": 1,
+        "parameter2": null,
+        "theta": "-1.34"
+    },
+    "metrics": {
+        "accuracy": 0.49166666666666664,
+        "accuracy_95CI": [
+            0.4,
+            0.5833333333333334
+        ],
+        "precision": 0.49230769230769234,
+        "recall": 0.5333333333333333,
+        "f1_score": 0.512,
+        "confusion_matrix": [
+            [
+                27,
+                33
+            ],
+            [
+                28,
+                32
+            ]
+        ],
+        "mcnemar_b": 27,
+        "mcnemar_c": 28,
+        "mcnemar_p_value": 1.0
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

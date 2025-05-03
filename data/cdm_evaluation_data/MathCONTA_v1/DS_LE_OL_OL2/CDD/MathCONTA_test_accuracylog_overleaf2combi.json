@@ -1,0 +1,36 @@
+{
+    "model_id": "DS_LE_OL_OL2",
+    "data_name": "MathCONTA_test",
+    "datetime": "2025-04-12T18:34:41.239154",
+    "method_name": "CDD",
+    "parameter": {
+        "parameter1": 0.3,
+        "parameter2": null,
+        "theta": "0.33"
+    },
+    "metrics": {
+        "accuracy": 0.48333333333333334,
+        "accuracy_95CI": [
+            0.39166666666666666,
+            0.5833333333333334
+        ],
+        "precision": 0.375,
+        "recall": 0.05,
+        "f1_score": 0.08823529411764706,
+        "confusion_matrix": [
+            [
+                55,
+                5
+            ],
+            [
+                57,
+                3
+            ]
+        ],
+        "mcnemar_b": 55,
+        "mcnemar_c": 57,
+        "mcnemar_p_value": 0.9247750936572267
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

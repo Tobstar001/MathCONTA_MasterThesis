@@ -1,0 +1,36 @@
+{
+    "model_id": "allenai/OLMo-7B-0724-Instruct-hf",
+    "data_name": "MathCONTA_full_test",
+    "datetime": "2025-04-13T13:13:50.943241",
+    "method_name": "Ensemble",
+    "parameter": {
+        "parameter1": null,
+        "parameter2": null,
+        "theta": "majority_voting_random_tie"
+    },
+    "metrics": {
+        "accuracy": 0.4,
+        "accuracy_95CI": [
+            0.23333333333333334,
+            0.6
+        ],
+        "precision": 0.4,
+        "recall": 0.4,
+        "f1_score": 0.4,
+        "confusion_matrix": [
+            [
+                6,
+                9
+            ],
+            [
+                9,
+                6
+            ]
+        ],
+        "mcnemar_b": 6,
+        "mcnemar_c": 9,
+        "mcnemar_p_value": 0.6072387695312499
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

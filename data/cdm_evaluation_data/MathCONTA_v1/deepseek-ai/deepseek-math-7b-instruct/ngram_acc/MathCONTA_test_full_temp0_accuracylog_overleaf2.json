@@ -1,0 +1,35 @@
+{
+    "model_id": "deepseek-ai/deepseek-math-7b-instruct",
+    "data_name": "MathCONTA_test_full_temp0",
+    "datetime": "2025-04-10T16:55:46.306914",
+    "method_name": "ngram_acc",
+    "parameter": {
+        "parameter1": 3,
+        "theta": "0.375"
+    },
+    "metrics": {
+        "accuracy": 0.43333333333333335,
+        "accuracy_95CI": [
+            0.26666666666666666,
+            0.6
+        ],
+        "precision": 0.45,
+        "recall": 0.6,
+        "f1_score": 0.5142857142857142,
+        "confusion_matrix": [
+            [
+                4,
+                11
+            ],
+            [
+                6,
+                9
+            ]
+        ],
+        "mcnemar_b": 4,
+        "mcnemar_c": 6,
+        "mcnemar_p_value": 0.75390625
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

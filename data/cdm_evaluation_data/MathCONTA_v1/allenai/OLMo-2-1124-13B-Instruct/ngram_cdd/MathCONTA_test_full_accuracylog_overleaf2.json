@@ -1,0 +1,36 @@
+{
+    "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+    "data_name": "MathCONTA_test_full",
+    "datetime": "2025-04-11T21:22:34.343427",
+    "method_name": "ngram_cdd",
+    "parameter": {
+        "parameter1": 10,
+        "parameter2": 0.3,
+        "theta": "0.033333"
+    },
+    "metrics": {
+        "accuracy": 0.5,
+        "accuracy_95CI": [
+            0.3,
+            0.6666666666666666
+        ],
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1_score": 0.6666666666666666,
+        "confusion_matrix": [
+            [
+                0,
+                15
+            ],
+            [
+                0,
+                15
+            ]
+        ],
+        "mcnemar_b": 0,
+        "mcnemar_c": 0,
+        "mcnemar_p_value": 1.0
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

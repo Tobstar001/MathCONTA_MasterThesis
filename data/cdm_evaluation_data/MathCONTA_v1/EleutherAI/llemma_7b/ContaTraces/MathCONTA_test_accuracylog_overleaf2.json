@@ -1,0 +1,36 @@
+{
+    "model_id": "EleutherAI/llemma_7b",
+    "data_name": "MathCONTA_test",
+    "datetime": "2025-04-11T13:46:43.432127",
+    "method_name": "ContaTraces",
+    "parameter": {
+        "parameter1": "exponential",
+        "parameter2": null,
+        "theta": "(1.610754, 0.019662)"
+    },
+    "metrics": {
+        "accuracy": 0.6,
+        "accuracy_95CI": [
+            0.43333333333333335,
+            0.7666666666666667
+        ],
+        "precision": 0.5882352941176471,
+        "recall": 0.6666666666666666,
+        "f1_score": 0.625,
+        "confusion_matrix": [
+            [
+                8,
+                7
+            ],
+            [
+                5,
+                10
+            ]
+        ],
+        "mcnemar_b": 8,
+        "mcnemar_c": 5,
+        "mcnemar_p_value": 0.5810546875
+    },
+    "n_bootstrap": 1000,
+    "seed": 42
+}

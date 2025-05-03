@@ -1,0 +1,149 @@
+{
+    "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+    "data_set": "MathCONTA_full_train",
+    "datetime": "2025-04-11T13:42:15.386307",
+    "method_name": "ContaTraces",
+    "parameter_range": {
+        "fit": "['exponential', 'linear']",
+        "theta": "optimized"
+    },
+    "CV_folds": 5,
+    "CV_seed": 42,
+    "best_log_entry": {
+        "method": "ContaTraces",
+        "fit": "exponential",
+        "parameter": {
+            "fit": "exponential"
+        },
+        "median_threshold_1": 3.194013,
+        "median_threshold_2": 0.022786,
+        "global_threshold": [
+            3.194013,
+            0.022786
+        ],
+        "mean_cvacc_train": 0.571429,
+        "mean_cvacc_test": 0.485714,
+        "all_thresholds": [
+            [
+                3.194013,
+                0.022786
+            ],
+            [
+                1.620498,
+                0.022786
+            ],
+            [
+                0.0,
+                0.000804
+            ],
+            [
+                3.194013,
+                0.022786
+            ],
+            [
+                3.395133,
+                0.020749
+            ]
+        ],
+        "all_cvacc_train": [
+            0.553571,
+            0.589286,
+            0.553571,
+            0.589286,
+            0.571429
+        ],
+        "all_cvacc_test": [
+            0.642857,
+            0.357143,
+            0.357143,
+            0.5,
+            0.571429
+        ]
+    },
+    "all_log_entries": [
+        {
+            "method": "ContaTraces",
+            "fit": "exponential",
+            "parameter": {
+                "fit": "exponential"
+            },
+            "median_threshold_1": 3.194013,
+            "median_threshold_2": 0.022786,
+            "global_threshold": [
+                3.194013,
+                0.022786
+            ],
+            "mean_cvacc_train": 0.571429,
+            "mean_cvacc_test": 0.485714,
+            "all_thresholds": [
+                [
+                    3.194013,
+                    0.022786
+                ],
+                [
+                    1.620498,
+                    0.022786
+                ],
+                [
+                    0.0,
+                    0.000804
+                ],
+                [
+                    3.194013,
+                    0.022786
+                ],
+                [
+                    3.395133,
+                    0.020749
+                ]
+            ],
+            "all_cvacc_train": [
+                0.553571,
+                0.589286,
+                0.553571,
+                0.589286,
+                0.571429
+            ],
+            "all_cvacc_test": [
+                0.642857,
+                0.357143,
+                0.357143,
+                0.5,
+                0.571429
+            ]
+        },
+        {
+            "method": "ContaTraces",
+            "fit": "linear",
+            "parameter": {
+                "fit": "linear"
+            },
+            "median_threshold_1": -0.007924,
+            "median_threshold_2": null,
+            "global_threshold": -0.007924,
+            "mean_cvacc_train": 0.6,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                -0.00917,
+                -0.007045,
+                -0.009941,
+                -0.007924,
+                -0.005371
+            ],
+            "all_cvacc_train": [
+                0.589286,
+                0.607143,
+                0.607143,
+                0.589286,
+                0.607143
+            ],
+            "all_cvacc_test": [
+                0.5,
+                0.428571,
+                0.357143,
+                0.571429,
+                0.5
+            ]
+        }
+    ]
+}

@@ -1,0 +1,169 @@
+{
+    "model_id": "DS_LE_OL_OL2",
+    "data_set": "MathCONTA_train",
+    "datetime": "2025-04-12T18:29:24.500956",
+    "method_name": "CDD",
+    "parameter_range": {
+        "alpha": "[0.0, 0.1, 0.2, 0.3]",
+        "theta": "optimized"
+    },
+    "CV_folds": 5,
+    "CV_seed": 42,
+    "best_log_entry": {
+        "method": "CDD",
+        "parameter": {
+            "alpha": 0.3
+        },
+        "global_threshold": 0.33,
+        "median_threshold": 0.33,
+        "mean_cvacc_train": 0.528571,
+        "mean_cvacc_test": 0.525,
+        "all_thresholds": [
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.32
+        ],
+        "all_cvacc_train": [
+            0.53125,
+            0.526786,
+            0.53125,
+            0.522321,
+            0.53125
+        ],
+        "all_cvacc_test": [
+            0.517857,
+            0.535714,
+            0.517857,
+            0.553571,
+            0.5
+        ]
+    },
+    "all_log_entries": [
+        {
+            "method": "CDD",
+            "parameter": {
+                "alpha": 0.0
+            },
+            "global_threshold": 0.0,
+            "median_threshold": 0.0,
+            "mean_cvacc_train": 0.5,
+            "mean_cvacc_test": 0.5,
+            "all_thresholds": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "all_cvacc_train": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ],
+            "all_cvacc_test": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        {
+            "method": "CDD",
+            "parameter": {
+                "alpha": 0.1
+            },
+            "global_threshold": 0.01,
+            "median_threshold": 0.01,
+            "mean_cvacc_train": 0.505357,
+            "mean_cvacc_test": 0.485714,
+            "all_thresholds": [
+                0.03,
+                0.02,
+                0.0,
+                0.0,
+                0.01
+            ],
+            "all_cvacc_train": [
+                0.508929,
+                0.508929,
+                0.5,
+                0.5,
+                0.508929
+            ],
+            "all_cvacc_test": [
+                0.464286,
+                0.482143,
+                0.5,
+                0.5,
+                0.482143
+            ]
+        },
+        {
+            "method": "CDD",
+            "parameter": {
+                "alpha": 0.2
+            },
+            "global_threshold": 0.23,
+            "median_threshold": 0.23,
+            "mean_cvacc_train": 0.521429,
+            "mean_cvacc_test": 0.517857,
+            "all_thresholds": [
+                0.23,
+                0.22,
+                0.23,
+                0.23,
+                0.24
+            ],
+            "all_cvacc_train": [
+                0.526786,
+                0.517857,
+                0.522321,
+                0.517857,
+                0.522321
+            ],
+            "all_cvacc_test": [
+                0.5,
+                0.517857,
+                0.517857,
+                0.535714,
+                0.517857
+            ]
+        },
+        {
+            "method": "CDD",
+            "parameter": {
+                "alpha": 0.3
+            },
+            "global_threshold": 0.33,
+            "median_threshold": 0.33,
+            "mean_cvacc_train": 0.528571,
+            "mean_cvacc_test": 0.525,
+            "all_thresholds": [
+                0.33,
+                0.33,
+                0.33,
+                0.33,
+                0.32
+            ],
+            "all_cvacc_train": [
+                0.53125,
+                0.526786,
+                0.53125,
+                0.522321,
+                0.53125
+            ],
+            "all_cvacc_test": [
+                0.517857,
+                0.535714,
+                0.517857,
+                0.553571,
+                0.5
+            ]
+        }
+    ]
+}

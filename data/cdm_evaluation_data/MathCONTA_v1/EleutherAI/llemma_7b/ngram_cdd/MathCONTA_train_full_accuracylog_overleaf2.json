@@ -1,0 +1,430 @@
+{
+    "model_id": "EleutherAI/llemma_7b",
+    "data_set": "MathCONTA_train_full",
+    "datetime": "2025-04-11T17:45:24.099422",
+    "method_name": "ngram_cdd",
+    "parameter_range": {
+        "n": "[10, 20, 30]",
+        "theta": "optimized"
+    },
+    "CV_folds": 5,
+    "CV_seed": 42,
+    "best_log_entry": {
+        "method": "ngram_cdd",
+        "parameter": {
+            "n": 10,
+            "alpha": 0.3
+        },
+        "global_threshold": 0.043333,
+        "median_threshold": 0.043333,
+        "mean_cvacc_train": 0.614286,
+        "mean_cvacc_test": 0.6,
+        "all_thresholds": [
+            0.043333,
+            0.04,
+            0.043333,
+            0.043333,
+            0.046667
+        ],
+        "all_cvacc_train": [
+            0.571429,
+            0.625,
+            0.589286,
+            0.642857,
+            0.642857
+        ],
+        "all_cvacc_test": [
+            0.785714,
+            0.5,
+            0.714286,
+            0.5,
+            0.5
+        ]
+    },
+    "all_log_entries": [
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 10,
+                "alpha": 0.0
+            },
+            "global_threshold": 0.113333,
+            "median_threshold": 0.113333,
+            "mean_cvacc_train": 0.589286,
+            "mean_cvacc_test": 0.542857,
+            "all_thresholds": [
+                0.113333,
+                0.113333,
+                0.113333,
+                0.133333,
+                0.003333
+            ],
+            "all_cvacc_train": [
+                0.553571,
+                0.589286,
+                0.607143,
+                0.607143,
+                0.589286
+            ],
+            "all_cvacc_test": [
+                0.714286,
+                0.571429,
+                0.5,
+                0.5,
+                0.428571
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 10,
+                "alpha": 0.1
+            },
+            "global_threshold": 0.016667,
+            "median_threshold": 0.013333,
+            "mean_cvacc_train": 0.592857,
+            "mean_cvacc_test": 0.457143,
+            "all_thresholds": [
+                0.003333,
+                0.006667,
+                0.206667,
+                0.013333,
+                0.016667
+            ],
+            "all_cvacc_train": [
+                0.571429,
+                0.589286,
+                0.571429,
+                0.607143,
+                0.625
+            ],
+            "all_cvacc_test": [
+                0.5,
+                0.428571,
+                0.5,
+                0.428571,
+                0.428571
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 10,
+                "alpha": 0.2
+            },
+            "global_threshold": 0.03,
+            "median_threshold": 0.03,
+            "mean_cvacc_train": 0.614286,
+            "mean_cvacc_test": 0.571429,
+            "all_thresholds": [
+                0.03,
+                0.03,
+                0.013333,
+                0.026667,
+                0.03
+            ],
+            "all_cvacc_train": [
+                0.589286,
+                0.625,
+                0.571429,
+                0.642857,
+                0.642857
+            ],
+            "all_cvacc_test": [
+                0.714286,
+                0.571429,
+                0.642857,
+                0.428571,
+                0.5
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 10,
+                "alpha": 0.3
+            },
+            "global_threshold": 0.043333,
+            "median_threshold": 0.043333,
+            "mean_cvacc_train": 0.614286,
+            "mean_cvacc_test": 0.6,
+            "all_thresholds": [
+                0.043333,
+                0.04,
+                0.043333,
+                0.043333,
+                0.046667
+            ],
+            "all_cvacc_train": [
+                0.571429,
+                0.625,
+                0.589286,
+                0.642857,
+                0.642857
+            ],
+            "all_cvacc_test": [
+                0.785714,
+                0.5,
+                0.714286,
+                0.5,
+                0.5
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 20,
+                "alpha": 0.0
+            },
+            "global_threshold": 0.023333,
+            "median_threshold": 0.023333,
+            "mean_cvacc_train": 0.535714,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.063333,
+                0.0,
+                0.023333,
+                0.026667,
+                0.023333
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.5,
+                0.553571,
+                0.535714,
+                0.571429
+            ],
+            "all_cvacc_test": [
+                0.571429,
+                0.5,
+                0.428571,
+                0.5,
+                0.357143
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 20,
+                "alpha": 0.1
+            },
+            "global_threshold": 0.006667,
+            "median_threshold": 0.006667,
+            "mean_cvacc_train": 0.560714,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.006667,
+                0.003333,
+                0.033333,
+                0.01,
+                0.003333
+            ],
+            "all_cvacc_train": [
+                0.535714,
+                0.535714,
+                0.553571,
+                0.571429,
+                0.607143
+            ],
+            "all_cvacc_test": [
+                0.571429,
+                0.571429,
+                0.5,
+                0.428571,
+                0.285714
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 20,
+                "alpha": 0.2
+            },
+            "global_threshold": 0.01,
+            "median_threshold": 0.013333,
+            "mean_cvacc_train": 0.560714,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.013333,
+                0.01,
+                0.21,
+                0.026667,
+                0.01
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.535714,
+                0.553571,
+                0.589286,
+                0.607143
+            ],
+            "all_cvacc_test": [
+                0.642857,
+                0.571429,
+                0.5,
+                0.357143,
+                0.285714
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 20,
+                "alpha": 0.3
+            },
+            "global_threshold": 0.003333,
+            "median_threshold": 0.006667,
+            "mean_cvacc_train": 0.578571,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.006667,
+                0.006667,
+                0.253333,
+                0.186667,
+                0.003333
+            ],
+            "all_cvacc_train": [
+                0.553571,
+                0.589286,
+                0.553571,
+                0.589286,
+                0.607143
+            ],
+            "all_cvacc_test": [
+                0.642857,
+                0.5,
+                0.5,
+                0.285714,
+                0.428571
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 30,
+                "alpha": 0.0
+            },
+            "global_threshold": 0.05,
+            "median_threshold": 0.043333,
+            "mean_cvacc_train": 0.514286,
+            "mean_cvacc_test": 0.485714,
+            "all_thresholds": [
+                0.093333,
+                0.0,
+                0.05,
+                0.043333,
+                0.006667
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.5,
+                0.517857,
+                0.517857,
+                0.517857
+            ],
+            "all_cvacc_test": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.428571
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 30,
+                "alpha": 0.1
+            },
+            "global_threshold": 0.196667,
+            "median_threshold": 0.196667,
+            "mean_cvacc_train": 0.535714,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.213333,
+                0.196667,
+                0.196667,
+                0.196667,
+                0.003333
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.517857,
+                0.535714,
+                0.535714,
+                0.571429
+            ],
+            "all_cvacc_test": [
+                0.571429,
+                0.571429,
+                0.5,
+                0.5,
+                0.214286
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 30,
+                "alpha": 0.2
+            },
+            "global_threshold": 0.006667,
+            "median_threshold": 0.006667,
+            "mean_cvacc_train": 0.539286,
+            "mean_cvacc_test": 0.471429,
+            "all_thresholds": [
+                0.003333,
+                0.31,
+                0.006667,
+                0.196667,
+                0.003333
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.517857,
+                0.535714,
+                0.553571,
+                0.571429
+            ],
+            "all_cvacc_test": [
+                0.571429,
+                0.571429,
+                0.5,
+                0.357143,
+                0.357143
+            ]
+        },
+        {
+            "method": "ngram_cdd",
+            "parameter": {
+                "n": 30,
+                "alpha": 0.3
+            },
+            "global_threshold": 0.003333,
+            "median_threshold": 0.166667,
+            "mean_cvacc_train": 0.546429,
+            "mean_cvacc_test": 0.457143,
+            "all_thresholds": [
+                0.323333,
+                0.006667,
+                0.323333,
+                0.166667,
+                0.006667
+            ],
+            "all_cvacc_train": [
+                0.517857,
+                0.517857,
+                0.535714,
+                0.571429,
+                0.589286
+            ],
+            "all_cvacc_test": [
+                0.571429,
+                0.571429,
+                0.5,
+                0.357143,
+                0.285714
+            ]
+        }
+    ]
+}
