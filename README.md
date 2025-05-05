@@ -1,22 +1,8 @@
 # MathCONTA_MasterThesis
 
 **RQ1**: For every contamination detection method there exists one notebook which will lead you through the experimental Setup.
+![Bildschirmfoto 2025-05-05 um 22 22 44](https://github.com/user-attachments/assets/9c09f4da-de06-4a18-87fe-6273f8a5880e)
 
-├── code
-│   ├── CDM_eval
-│   │   ├── CDMs_functions_old.py
-│   │   ├── CDMs_functions_v1.py
-│   │   ├── CD_pipeline_CV_CDD.ipynb (RQ1)
-│   │   ├── CD_pipeline_CV_ContaTraces.ipynb (RQ1)
-│   │   ├── CD_pipeline_CV_minK.ipynb (RQ1)
-│   │   ├── CD_pipeline_CV_ngram_acc.ipynb (RQ1)
-│   │   ├── CD_pipeline_CV_ngram_cdd.ipynb (RQ1)
-│   │   ├── CD_pipeline_CV_ngram_loglike.ipynb (RQ1)
-│   │   ├── cdm_accuracy_log_analysis.ipynb (RQ1)
-│   │   └── ensemble_and_boxplot_eval.ipynb (RQ1)
-│   └── LLM_eval
-│       ├── LLM_Eval_Visuals.ipynb (RQ2)
-│       └── LLM_Evaluations.ipynb (RQ2)
 
 ## Abstract of the Thesis:
 Large language models (LLMs) have demonstrated impressive capabilities in mathematical reasoning tasks. However, concerns persist around data contamination, where benchmark problems used for evaluation have appeared in the model's pretraining data. Such contamination can artificially inflate performance metrics, particularly in domains where genuine reasoning must be distinguished from memorization. This thesis introduces \emph{MathCONTA}, a novel mathematical dataset for contamination detection. It spans multiple domains—including algebra, number theory, combinatorics, and integration—and covers various difficulty levels, from simple word problems to advanced math contest problems.
